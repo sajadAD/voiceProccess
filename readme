@@ -12,4 +12,4 @@ pip install -r requirements.txt
 
 
 run code
-python record_hist.py  
+python main.py  

@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 from histogram import plot_histogram
 from energy import plot_energy
+from vad import plot_vad
 
 class AudioApp:
     def __init__(self, root):
@@ -31,7 +32,11 @@ class AudioApp:
         tk.Button(self.root, text="Show Energy",
                   command=self.show_energy, bg="#FF9800",
                   fg="white", width=20).pack(pady=5)
-
+        
+        tk.Button(self.root, text="Show VAD",
+                  command=self.show_vad, bg="#9C27B0",
+                  fg="white", width=20).pack(pady=5)
+        
         tk.Button(self.root, text="Exit",
                   command=self.root.destroy, bg="#f44336",
                   fg="white", width=20).pack(pady=10)
@@ -62,5 +67,14 @@ class AudioApp:
 
         try:
             plot_energy(self.file_path)
+        except Exception as e:
+            messagebox.showerror("Error", f"Something went wrong:\n{e}")
+            
+    def show_vad(self):
+        if not self.file_path:
+            messagebox.showerror("Error", "Please select a WAV file first.")
+            return
+        try:
+            plot_vad(self.file_path)
         except Exception as e:
             messagebox.showerror("Error", f"Something went wrong:\n{e}")
