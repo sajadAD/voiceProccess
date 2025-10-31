@@ -21,7 +21,6 @@ class AudioApp:
     def setup_style(self):
         style = ttk.Style()
         style.theme_use("clam") 
-
         style.configure("Title.TLabel",
                         font=("Poppins", 16, "bold"),
                         foreground="#222")
@@ -126,4 +125,3 @@ class AudioApp:
             plot_zcr(self.file_path)
         except Exception as e:
             messagebox.showerror("Error", f"Something went wrong:\n{e}")
-
