@@ -1,0 +1,54 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Virtual environments ---
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- IDEs & Editors ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- macOS system files ---
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# --- Windows system files ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Logs & temp files ---
+*.log
+*.tmp
+*.bak
+*.swp
+
+# --- Build & Distribution ---
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Audio files (optional, ignore if not needed) ---
+*.wav
+*.mp3
+
+# --- Jupyter/Colab (if used for testing) ---
+.ipynb_checkpoints/
+*.ipynb
+
+# --- Custom local data ---
+output/
+temp/
+results/
+.cache/
