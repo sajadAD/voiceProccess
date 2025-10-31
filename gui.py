@@ -20,7 +20,8 @@ class AudioApp:
 
     def setup_style(self):
         style = ttk.Style()
-        style.theme_use("clam") 
+        style.theme_use("clam")
+
         style.configure("Title.TLabel",
                         font=("Poppins", 16, "bold"),
                         foreground="#222")
