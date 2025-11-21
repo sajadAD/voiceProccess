@@ -4,6 +4,7 @@ from histogram import plot_histogram
 from energy import plot_energy
 from vad import plot_vad
 from zcr import plot_zcr
+from cepstrum import plot_cepstrum
 
 
 class AudioApp:
@@ -78,6 +79,9 @@ class AudioApp:
 
         ttk.Button(self.root, text="Show ZCR",
                    command=self.show_zcr, style="DeepPurple.TButton").pack(pady=5)
+        
+        ttk.Button(self.root, text="Show Cepstrum",
+           command=self.show_cepstrum, style="DeepPurple.TButton").pack(pady=5)
 
         ttk.Button(self.root, text="Exit",
                    command=self.root.destroy, style="Red.TButton").pack(pady=10)
@@ -126,3 +130,13 @@ class AudioApp:
             plot_zcr(self.file_path)
         except Exception as e:
             messagebox.showerror("Error", f"Something went wrong:\n{e}")
+
+    def show_cepstrum(self):
+        if not self.check_file():
+            return
+        try:
+            plot_cepstrum(self.file_path)
+        except Exception as e:
+            messagebox.showerror("Error", f"Something went wrong:\n{e}")
+
+
